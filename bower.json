@@ -1,0 +1,20 @@
+{
+  "name": "littlebird-site",
+  "version": "0.0.1",
+  "authors": [
+    "Yusuke Takahashi <youthkee@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "main": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.1.1"
+  }
+}
