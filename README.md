@@ -1,5 +1,4 @@
 # littlebird-site
-===============
 
 littlebird's officieal web site build with Bootstrap.
 
