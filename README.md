@@ -1,8 +1,8 @@
 # littlebird-site
 
-![](screenshot.png)
+littlebird's officieal web site build with Bootstrap and Sketch 3.
 
-littlebird's officieal web site build with Bootstrap.
+![](screenshot.png?raw=true)
 
 ## Requrements
 
