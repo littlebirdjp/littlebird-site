@@ -2,6 +2,8 @@
 
 littlebird's officieal web site build with Bootstrap.
 
+![](screenshot.png?raw=true)
+
 ## Requrements
 
 - Bootstrap 3.1.1
