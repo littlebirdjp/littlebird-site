@@ -1,8 +1,8 @@
 # littlebird-site
 
-littlebird's officieal web site build with Bootstrap.
+![](screenshot.png)
 
-![](screenshot.png?raw=true)
+littlebird's officieal web site build with Bootstrap.
 
 ## Requrements
 
