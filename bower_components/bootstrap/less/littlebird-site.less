@@ -6,8 +6,24 @@
 @import "littlebird-variables.less";
 @import "mixins.less";
 
-// Alternate navbars
+//
+// Navbars
 // --------------------------------------------------
+
+.navbar {
+  position: relative;
+  min-height: @navbar-height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
+  margin-bottom: @navbar-margin-bottom;
+  //border: 1px solid transparent;
+  border: none;
+
+  // Prevent floats from breaking the navbar
+  &:extend(.clearfix all);
+
+  @media (min-width: @grid-float-breakpoint) {
+    //border-radius: @navbar-border-radius;
+  }
+}
 
 // Default navbar
 .navbar-default {
@@ -26,6 +42,10 @@
     }
   }
 
+  .navbar-collapse,
+  .navbar-form {
+    border: none;
+  }
 
 }
 
@@ -35,7 +55,7 @@
 // the nav the full height of the horizontal nav (above 768px).
 
 .navbar-nav {
-  margin: (@navbar-padding-vertical / 2) -@navbar-padding-horizontal;
+  margin: 0 -@navbar-padding-horizontal;
 
   > li > a {
     padding-top:    10px;
@@ -45,26 +65,7 @@
 
   @media (max-width: @grid-float-breakpoint-max) {
     // Dropdowns get custom display when collapsed
-    .open .dropdown-menu {
-      position: static;
-      float: none;
-      width: auto;
-      margin-top: 0;
-      background-color: transparent;
-      border: 0;
-      box-shadow: none;
-      > li > a,
-      .dropdown-header {
-        padding: 5px 15px 5px 25px;
-      }
-      > li > a {
-        line-height: @line-height-computed;
-        &:hover,
-        &:focus {
-          background-image: none;
-        }
-      }
-    }
+    background: #F9F9F9;
   }
 
   // Uncollapse the nav
@@ -91,16 +92,8 @@
 
 
 //
-// Navbars
+// theme.less override
 // --------------------------------------------------
-
-.navbar {
-  margin: 0;
-  min-height: 35px;
-  //border: none;
-  -webkit-border-radius: 0;
-          border-radius: 0;
-}
 
 .navbar-default {
   background: none;
