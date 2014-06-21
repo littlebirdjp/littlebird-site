@@ -15,6 +15,16 @@
   color: #4aca5c;
   background-color: transparent;
 }
+.navbar-default .navbar-toggle {
+  border: none;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #ffffff;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #359242;
+}
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
   border: none;
@@ -26,11 +36,6 @@
   padding-top: 10px;
   padding-bottom: 10px;
   line-height: 20px;
-}
-@media (max-width: 767px) {
-  .navbar-nav {
-    background: #F9F9F9;
-  }
 }
 @media (min-width: 768px) {
   .navbar-nav {
@@ -50,8 +55,17 @@
     margin-right: -15px;
   }
 }
+.navbar-toggle {
+  margin-right: 5px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
 .navbar-default {
   background: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.navbar-collapse {
   -webkit-box-shadow: none;
   box-shadow: none;
 }

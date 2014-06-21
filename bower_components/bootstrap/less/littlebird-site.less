@@ -3,6 +3,14 @@
 // Load core variables and mixins
 // --------------------------------------------------
 
+@lb-bg-color: #fff;
+@lb-content-bg: #F9F9F9;
+
+@lb-border-color: #C2C1C1;
+
+@lb-title-color: #359242;
+@lb-title-color2: #4ACA5C;
+
 @import "littlebird-variables.less";
 @import "mixins.less";
 
@@ -42,6 +50,17 @@
     }
   }
 
+  .navbar-toggle {
+    border: none;
+    &:hover,
+    &:focus {
+      background-color: @navbar-default-toggle-hover-bg;
+    }
+    .icon-bar {
+      background-color: @navbar-default-toggle-icon-bar-bg;
+    }
+  }
+
   .navbar-collapse,
   .navbar-form {
     border: none;
@@ -65,7 +84,7 @@
 
   @media (max-width: @grid-float-breakpoint-max) {
     // Dropdowns get custom display when collapsed
-    background: #F9F9F9;
+    //background: #F9F9F9;
   }
 
   // Uncollapse the nav
@@ -89,7 +108,17 @@
   }
 }
 
+// Navbar toggle
+//
+// Custom button for toggling the `.navbar-collapse`, powered by the collapse
+// JavaScript plugin.
 
+.navbar-toggle {
+  margin-right: 5px;
+  //.navbar-vertical-align(34px);
+  margin-top: 0;
+  margin-bottom: 0;
+}
 
 //
 // theme.less override
@@ -97,6 +126,11 @@
 
 .navbar-default {
   background: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.navbar-collapse {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
