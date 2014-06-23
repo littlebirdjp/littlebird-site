@@ -98,6 +98,12 @@
     text-align: right;
   }
 }
+@media (min-width: 768px) {
+  .main__logo img {
+    margin-top: -20px;
+    margin-right: -20px;
+  }
+}
 @media (min-width: 992px) {
   .main__logo img {
     width: 180px;
@@ -144,7 +150,6 @@
 @media (min-width: 768px) {
   .main__lead p {
     text-align: center;
-    margin-top: 15px;
   }
 }
 /*# sourceMappingURL=littlebird-site.css.map */

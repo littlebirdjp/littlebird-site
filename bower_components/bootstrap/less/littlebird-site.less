@@ -151,6 +151,10 @@
     text-align: right;
   }
   img {
+    @media (min-width: @screen-sm) {
+      margin-top: -20px;
+      margin-right: -20px;
+    }
     @media (min-width: @screen-md) {
       width: 180px;
       height: auto;
@@ -190,7 +194,6 @@
     }
     @media (min-width: @screen-sm) {
       text-align: center;
-      margin-top: 15px;
     }
   }
 }
