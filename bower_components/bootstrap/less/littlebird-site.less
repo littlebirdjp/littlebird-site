@@ -3,7 +3,7 @@
 // Load core variables and mixins
 // --------------------------------------------------
 
-@lb-bg-color: #fff;
+@lb-body-bg: #fff;
 @lb-content-bg: #F9F9F9;
 
 @lb-border-color: #C2C1C1;
@@ -127,7 +127,53 @@
           box-shadow: none;
 }
 
+//
+// jumbotron
+// --------------------------------------------------
 
+.main__logo {
+  @media (max-width: @screen-sm) {
+    text-align: center;
+  }
+  @media (min-width: @screen-sm) {
+    text-align: right;
+  }
+  img {
+    @media (min-width: @screen-md) {
+      width: 180px;
+      height: auto;
+    }
+  }
+}
 
+.main__title {
+  @media (max-width: @screen-sm) {
+    text-align: center;
+  }
+  @media (min-width: @screen-sm) {
+    text-align: left;
+  }
+  h1 {
+    margin: 0;
+    @media (min-width: @screen-sm) {
+      line-height: 143px;
+    }
+    @media (min-width: @screen-md) {
+      line-height: 180px;
+    }
+  }
+}
 
-
+.main__lead {
+  p {
+    font-size: 16px;
+    margin-bottom: 0;
+    margin-top: 15px;
+    @media (max-width: @screen-sm) {
+      text-align: left;
+    }
+    @media (min-width: @screen-sm) {
+      text-align: center;
+    }
+  }
+}

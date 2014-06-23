@@ -68,4 +68,58 @@
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+@media (max-width: 768px) {
+  .main__logo {
+    text-align: center;
+  }
+}
+@media (min-width: 768px) {
+  .main__logo {
+    text-align: right;
+  }
+}
+@media (min-width: 992px) {
+  .main__logo img {
+    width: 180px;
+    height: auto;
+  }
+}
+@media (max-width: 768px) {
+  .main__title {
+    text-align: center;
+  }
+}
+@media (min-width: 768px) {
+  .main__title {
+    text-align: left;
+  }
+}
+.main__title h1 {
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .main__title h1 {
+    line-height: 143px;
+  }
+}
+@media (min-width: 992px) {
+  .main__title h1 {
+    line-height: 180px;
+  }
+}
+.main__lead p {
+  font-size: 16px;
+  margin-bottom: 0;
+  margin-top: 15px;
+}
+@media (max-width: 768px) {
+  .main__lead p {
+    text-align: left;
+  }
+}
+@media (min-width: 768px) {
+  .main__lead p {
+    text-align: center;
+  }
+}
 /*# sourceMappingURL=littlebird-site.css.map */
