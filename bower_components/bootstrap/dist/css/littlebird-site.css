@@ -68,6 +68,25 @@
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+.main {
+  padding: 15px;
+  margin-bottom: 0;
+  background: none;
+}
+.main:before,
+.main:after {
+  content: " ";
+  display: table;
+}
+.main:after {
+  clear: both;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
 @media (max-width: 768px) {
   .main__logo {
     text-align: center;
