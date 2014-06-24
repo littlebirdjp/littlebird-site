@@ -179,6 +179,40 @@
     margin-bottom: 20px;
   }
 }
+.contact {
+  padding-bottom: 15px;
+}
+.contact__text {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.linkButton {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-image: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border: none;
+  padding: 10px 40px;
+  background: #359242;
+}
+.linkButton:hover {
+  background: #359242;
+}
+.linkButton img {
+  margin-right: 5px;
+}
+@media (min-width: 992px) {
+  .linkButton {
+    font-size: 18px;
+  }
+  .linkButton img {
+    width: 20px;
+    height: auto;
+  }
+}
+.linkButton_icon_left {
+  padding: 10px 40px 10px 35px;
+}
 .footer {
   text-align: center;
   padding: 15px 0;
