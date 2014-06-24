@@ -157,6 +157,13 @@
   border-top: 1px solid #c2c1c1;
   border-bottom: 1px solid #c2c1c1;
 }
+.section {
+  margin-right: 0;
+  margin-left: 0;
+}
+.section_border_bottom {
+  border-bottom: 1px solid #c2c1c1;
+}
 .sectionTitle {
   font-family: 'Source Sans Pro', sans-serif;
   color: #359242;
