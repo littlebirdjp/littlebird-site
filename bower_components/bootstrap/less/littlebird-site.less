@@ -6,7 +6,7 @@
 @lb-body-bg: #fff;
 @lb-content-bg: #F9F9F9;
 
-@lb-border-color: #C2C1C1;
+@lb-content-border: #C2C1C1;
 
 @lb-title-color: #359242;
 @lb-title-color2: #4ACA5C;
@@ -133,7 +133,7 @@
 
 .main {
   .clearfix;
-  padding: 15px 0;
+  padding: 0 0 15px 0;
   margin-bottom: 0;
   background: none;
   @media (min-width: @screen-sm) {
@@ -202,6 +202,12 @@
 // content
 // --------------------------------------------------
 
+.content {
+  background: @lb-content-bg;
+  border-top: 1px solid @lb-content-border;
+  border-bottom: 1px solid @lb-content-border;
+}
+
 .sectionTitle {
     font-family: 'Source Sans Pro', sans-serif;
     color: @lb-title-color;
@@ -216,4 +222,13 @@
     }
 }
 
+//
+// footer
+// --------------------------------------------------
+
+.footer {
+  text-align: center;
+  padding: 15px 0;
+  margin: 0;
+}
 
