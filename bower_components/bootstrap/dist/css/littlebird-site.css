@@ -213,6 +213,15 @@
 .linkButton_icon_left {
   padding: 10px 40px 10px 35px;
 }
+.linkButton_icon_left .glyphicon {
+  margin-right: 5px;
+  top: 2px;
+}
+@media (min-width: 768px) {
+  .linkButton_icon_left .glyphicon {
+    top: 3px;
+  }
+}
 .footer {
   text-align: center;
   padding: 15px 0;
