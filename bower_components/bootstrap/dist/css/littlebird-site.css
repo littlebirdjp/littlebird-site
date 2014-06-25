@@ -196,7 +196,7 @@
   background: #359242;
 }
 .linkButton:hover {
-  background: #359242;
+  background: #4aca5c;
 }
 .linkButton img {
   margin-right: 5px;
@@ -220,6 +220,7 @@
 @media (min-width: 768px) {
   .linkButton_icon_left .glyphicon {
     top: 3px;
+    margin-right: 8px;
   }
 }
 .footer {
