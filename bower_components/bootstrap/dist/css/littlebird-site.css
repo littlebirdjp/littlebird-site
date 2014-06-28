@@ -1,3 +1,6 @@
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
 .navbar {
   min-height: 35px;
   margin-bottom: 0;
@@ -161,9 +164,6 @@
   margin-right: 0;
   margin-left: 0;
 }
-.section h3 {
-  font-size: 16px;
-}
 .section_border_bottom {
   border-bottom: 1px solid #c2c1c1;
 }
@@ -182,13 +182,59 @@
     margin-bottom: 20px;
   }
 }
+.service a {
+  color: #000;
+  display: block;
+}
+.service a:hover,
+.service a:focus {
+  color: #ccc;
+  text-decoration: none;
+}
+.service a:hover h3,
+.service a:focus h3,
+.service a:hover p,
+.service a:focus p {
+  color: #737373;
+}
+.service__title {
+  font-size: 22px;
+  text-align: center;
+}
+.service__text {
+  font-size: 18px;
+}
+@media (min-width: 768px) {
+  .service__image {
+    width: 116px;
+    height: auto;
+  }
+}
+.service .thumbnail {
+  background: none;
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
 .profile {
   padding-bottom: 20px;
+}
+.profile__image {
+  text-align: right;
 }
 @media (max-width: 768px) {
   .profile__image {
     text-align: center;
   }
+}
+@media (min-width: 768px) {
+  .profile__image img {
+    width: 80px;
+    height: auto;
+  }
+}
+.profile__title {
+  font-size: 16px;
 }
 @media (max-width: 768px) {
   .profile__title {

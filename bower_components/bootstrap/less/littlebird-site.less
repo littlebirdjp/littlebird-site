@@ -14,6 +14,10 @@
 @import "littlebird-variables.less";
 @import "mixins.less";
 
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+
 //
 // Navbars
 // --------------------------------------------------
@@ -211,9 +215,6 @@
 .section {
   margin-right: 0;
   margin-left: 0;
-  h3 {
-    font-size: 16px;
-  }
 }
 
 .section_border_bottom {
@@ -235,27 +236,70 @@
 }
 
 //
+// service
+// --------------------------------------------------
+
+.service {
+  a {
+    color: #000;
+    display: block;
+    &:hover,
+    &:focus {
+      color: #ccc;
+      text-decoration: none;
+      h3,
+      p {
+        color: #737373;
+      }
+    }
+  }
+  &__title {
+      font-size: 22px;
+      text-align: center;
+  }
+  &__text {
+    font-size: 18px;
+  }
+  &__image {
+    @media (min-width: @screen-sm) {
+      width: 116px;
+      height: auto;
+    }
+  }
+  .thumbnail {
+    background: none;
+    border: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+}
+
+
+//
 // profile
 // --------------------------------------------------
 
 .profile {
   padding-bottom: 20px;
   &__image {
-      @media (max-width: @screen-sm) {
-        text-align: center;
+    text-align: right;
+    @media (max-width: @screen-sm) {
+      text-align: center;
+    }
+    img {
+      @media (min-width: @screen-sm) {
+        width: 80px;
+        height: auto;
       }
+    }
   }
   &__title {
-      @media (max-width: @screen-sm) {
-        text-align: center;
-      }
+    font-size: 16px;
+    @media (max-width: @screen-sm) {
+      text-align: center;
+    }
   }
 }
-
-
-
-
-
 
 //
 // contact
