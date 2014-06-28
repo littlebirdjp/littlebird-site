@@ -215,6 +215,7 @@ html {
 .section {
   margin-right: 0;
   margin-left: 0;
+  padding-bottom: 20px;
 }
 
 .section_border_bottom {
@@ -239,34 +240,44 @@ html {
 // service
 // --------------------------------------------------
 
+#service {
+  margin-bottom: 5px;
+}
+
 .service {
+  padding: 0;
   a {
     color: #000;
     display: block;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
     &:hover,
     &:focus {
-      color: #ccc;
+      background: rgba(0, 0, 0, 0.05);
       text-decoration: none;
       h3,
       p {
-        color: #737373;
+        
       }
     }
   }
   &__title {
-      font-size: 22px;
-      text-align: center;
+    margin-top: 0;
+    font-size: 22px;
+    text-align: center;
   }
   &__text {
     font-size: 18px;
+    margin-bottom: 0;
   }
   &__image {
+    margin-top: 10px;
     @media (min-width: @screen-sm) {
       width: 116px;
       height: auto;
     }
   }
   .thumbnail {
+    margin-bottom: 0;
     background: none;
     border: none;
     -webkit-box-shadow: none;
@@ -280,8 +291,8 @@ html {
 // --------------------------------------------------
 
 .profile {
-  padding-bottom: 20px;
   &__image {
+    margin-bottom: 10px;
     text-align: right;
     @media (max-width: @screen-sm) {
       text-align: center;
@@ -294,6 +305,7 @@ html {
     }
   }
   &__title {
+    margin-top: 0;
     font-size: 16px;
     @media (max-width: @screen-sm) {
       text-align: center;
@@ -301,13 +313,18 @@ html {
   }
 }
 
+.socialButton {
+    @media (max-width: @screen-sm) {
+      text-align: center;
+    }
+    img {
+      margin-right: 3px;
+    }
+}
+
 //
 // contact
 // --------------------------------------------------
-
-.contact {
-  padding-bottom: 15px;
-}
 
 .contact__text {
   text-align: center;
