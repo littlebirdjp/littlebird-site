@@ -159,9 +159,9 @@ a {
   }
 }
 .content {
-  background: #f9f9f9;
   border-top: 1px solid #c2c1c1;
   border-bottom: 1px solid #c2c1c1;
+  background: #f9f9f9;
 }
 .section {
   margin-right: 0;
