@@ -1,6 +1,9 @@
 html {
   font-family: "Helvetica Neue", Helvetica, Arial, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
 }
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+}
 .navbar {
   min-height: 35px;
   margin-bottom: 0;
@@ -192,7 +195,6 @@ html {
 .service a {
   color: #000;
   display: block;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
 }
 .service a:hover,
 .service a:focus {
