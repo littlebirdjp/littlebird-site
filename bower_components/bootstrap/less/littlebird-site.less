@@ -211,6 +211,9 @@
 .section {
   margin-right: 0;
   margin-left: 0;
+  h3 {
+    font-size: 16px;
+  }
 }
 
 .section_border_bottom {
@@ -230,6 +233,29 @@
       margin-bottom: 20px;
     }
 }
+
+//
+// profile
+// --------------------------------------------------
+
+.profile {
+  padding-bottom: 20px;
+  &__image {
+      @media (max-width: @screen-sm) {
+        text-align: center;
+      }
+  }
+  &__title {
+      @media (max-width: @screen-sm) {
+        text-align: center;
+      }
+  }
+}
+
+
+
+
+
 
 //
 // contact

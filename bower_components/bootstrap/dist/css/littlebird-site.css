@@ -161,6 +161,9 @@
   margin-right: 0;
   margin-left: 0;
 }
+.section h3 {
+  font-size: 16px;
+}
 .section_border_bottom {
   border-bottom: 1px solid #c2c1c1;
 }
@@ -177,6 +180,19 @@
     font-size: 36px;
     margin-top: 20px;
     margin-bottom: 20px;
+  }
+}
+.profile {
+  padding-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .profile__image {
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .profile__title {
+    text-align: center;
   }
 }
 .contact {
