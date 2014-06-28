@@ -201,11 +201,11 @@ html {
 }
 .service__title {
   margin-top: 0;
-  font-size: 22px;
+  font-size: 20px;
   text-align: center;
 }
 .service__text {
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 0;
 }
 .service__image {
