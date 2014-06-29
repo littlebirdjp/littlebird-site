@@ -5,9 +5,9 @@
 	<key>app</key>
 	<string>com.bohemiancoding.sketch3.beta</string>
 	<key>build</key>
-	<integer>7884</integer>
+	<integer>7976</integer>
 	<key>commit</key>
-	<string>00e8942f016455fa9af378ad8d7470d79fa1fc43</string>
+	<string>fe40966e7863a0cd674cc6f4192974634735822c</string>
 	<key>fonts</key>
 	<array>
 		<string>MarckScript-Regular</string>
@@ -16,7 +16,7 @@
 		<string>SourceSansPro-Regular</string>
 	</array>
 	<key>length</key>
-	<integer>9651459</integer>
+	<integer>9501606</integer>
 	<key>version</key>
 	<integer>37</integer>
 </dict>
