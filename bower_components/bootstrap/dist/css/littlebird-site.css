@@ -110,12 +110,6 @@ a {
     margin-right: -20px;
   }
 }
-@media (min-width: 992px) {
-  .main__logo img {
-    width: 180px;
-    height: auto;
-  }
-}
 @media (max-width: 768px) {
   .main__title {
     text-align: center;
@@ -129,18 +123,13 @@ a {
 .main__title h1 {
   font-family: 'Marck Script', cursive;
   color: #359242;
-  font-size: 64px;
+  font-size: 36px;
   margin: 0;
 }
 @media (min-width: 768px) {
   .main__title h1 {
-    line-height: 143px;
-  }
-}
-@media (min-width: 992px) {
-  .main__title h1 {
-    line-height: 180px;
-    font-size: 88px;
+    line-height: 170px;
+    font-size: 80px;
   }
 }
 .main__lead p {
@@ -211,13 +200,7 @@ a {
   margin-bottom: 0;
 }
 .service__image {
-  margin-top: 10px;
-}
-@media (min-width: 768px) {
-  .service__image {
-    width: 116px;
-    height: auto;
-  }
+  margin-top: 5px;
 }
 .service .thumbnail {
   margin-bottom: 0;
