@@ -89,8 +89,8 @@ a {
 }
 @media (min-width: 768px) {
   .main {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 20px;
+    padding-bottom: 30px;
   }
 }
 @media (max-width: 768px) {
@@ -160,7 +160,7 @@ a {
 .section_border_bottom {
   border-bottom: 1px solid #c2c1c1;
 }
-.sectionTitle {
+.section__title {
   font-family: 'Source Sans Pro', sans-serif;
   color: #359242;
   text-align: center;
@@ -169,7 +169,7 @@ a {
   margin-bottom: 10px;
 }
 @media (min-width: 768px) {
-  .sectionTitle {
+  .section__title {
     font-size: 36px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -218,12 +218,6 @@ a {
     text-align: center;
   }
 }
-@media (min-width: 768px) {
-  .profile__image img {
-    width: 80px;
-    height: auto;
-  }
-}
 .profile__title {
   margin-top: 0;
   font-size: 16px;
@@ -257,16 +251,9 @@ a {
 .linkButton:hover {
   background: #4aca5c;
 }
-.linkButton img {
-  margin-right: 5px;
-}
 @media (min-width: 992px) {
   .linkButton {
     font-size: 18px;
-  }
-  .linkButton img {
-    width: 20px;
-    height: auto;
   }
 }
 .linkButton_icon_left {
