@@ -19,7 +19,7 @@ littlebird's official web site build with Bootstrap and Sketch 3.
 ## 制作手順
 
 - [デザインカンプの作成](#デザインカンプの作成)
-- [Bootstrapの環境準備](#Bootstrapの環境準備)
+- [Bootstrapの環境準備](#bootstrapの環境準備)
 - [コーディング](#コーディング)
 
 ### デザインカンプの作成
@@ -29,7 +29,7 @@ littlebird's official web site build with Bootstrap and Sketch 3.
 Sketchでは、デバイスごとの画面サイズに対応したアートボードを作成できるので、レスポンシブ用にモバイルとデスクトップ等のアートボードを作成しましょう。
 （このプロジェクトでは、最終的にモバイルとタブレットのアートボードのみ作成しました）
 
-Insert -> Artboard -> Responsive Web Design -> Mobile Portrait
+Insert -> Artboard -> Responsive Web Design -> Mobile Portrait  
 Insert -> Artboard -> Responsive Web Design -> Tablet Portrait
 
 アートボードは、複数挿入すると、隣に次々と並んでいくので、複数デバイス向けのデザインを一度に作成できます。
