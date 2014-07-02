@@ -2,7 +2,7 @@
 
 littlebird's official web site build with Bootstrap and Sketch 3.
 
-[Bootstrap](http://getbootstrap.com/)と[Sketch](http://bohemiancoding.com/sketch/)で簡単な自己紹介サイトを作ってみようというプロジェクトです。
+[Bootstrap](http://getbootstrap.com/)と[Sketch](http://bohemiancoding.com/sketch/)で簡単な自己紹介サイトを作ってみようという個人プロジェクトです。
 
 ![](screenshot.png?raw=true)
 
@@ -18,15 +18,22 @@ littlebird's official web site build with Bootstrap and Sketch 3.
 
 ## 制作手順
 
-### デザインカンプの作成
+#### アートボードの作成
 
-1. アートボードの作成
-2. モバイル版のデザインカンプを作成
-3. 共通スタイルをShared Style登録
-4. 共通化できるパーツをシンボルに登録
-5. デスクトップ版のデザインカンプを作成
-6. パーツの書き出し設定
-7. パーツの書き出し
+Sketchでは、デバイスごとの画面サイズに対応したアートボードを作成できるので、レスポンシブ用にモバイルとデスクトップ等のアートボードを作成しましょう。
+（このプロジェクトでは、最終的にモバイルとタブレットのアートボードのみ作成しました）
+
+Insert -> Artboard -> Responsive Web Design -> Mobile Portrait
+Insert -> Artboard -> Responsive Web Design -> Tablet Portrait
+
+アートボードは、複数挿入すると、隣に次々と並んでいくので、複数デバイス向けのデザインを一度に作成できます。
+
+#### モバイル版のデザインカンプを作成
+#### 共通スタイルをShared Style登録
+#### 共通化できるパーツをシンボルに登録
+#### デスクトップ版のデザインカンプを作成
+#### パーツの書き出し設定
+#### パーツの書き出し
 
 ### Bootstrapの環境準備
 
