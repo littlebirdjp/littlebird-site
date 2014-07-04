@@ -31,7 +31,7 @@ littlebird's official web site build with Bootstrap and Sketch 3.
 	2. [gruntとlessのインストール](#gruntとlessのインストール)
 	3. [gruntの動作確認](#gruntの動作確認)
 	4. [オリジナルCSSの追加](#オリジナルcssの追加)
-	5. [Variables 変数用ファイルの追加](#variables 変数用ファイルの追加)
+	5. [変数用ファイルの追加](#変数用ファイルの追加)
 	6. [minifyの設定を追加](#minifyの設定を追加)
 3. [コーディング](#コーディング)
 
@@ -104,7 +104,7 @@ $ bower install bootstrap --save
 #### gruntとlessのインストール
 #### gruntの動作確認
 #### オリジナルCSSの追加
-#### Variables 変数用ファイルの追加
+#### 変数用ファイルの追加
 #### minifyの設定を追加
 
 ### コーディング
