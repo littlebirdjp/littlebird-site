@@ -34,8 +34,8 @@ littlebird's official web site build with Bootstrap and Sketch 3.
 #### アートボードの作成
 
 Sketchでレスポンシブデザインのカンプを作成するため、複数のアートボードを作成しました。  
-アートボードの「Responsive Web Design」テンプレートから、「Mobile Portrait」と「Tablet Portrait」、「Desktop」を選択してキャンバスに配置しました。  
-（最終的には、Mobile PortraitとTablet Portraitのアートボードのみ使用しています）
+アートボードの「Responsive Web Design」テンプレートから、「Mobile Portrait」、「Tablet Portrait」、「Desktop」をそれぞれ選択すると、一枚のキャンバス上に複数のアートボードを配置できます。  
+（最終的には、Mobile PortraitとTablet Portraitのアートボードのみ使用しました）
 
 #### モバイル版のデザインカンプを作成
 
