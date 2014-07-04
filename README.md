@@ -27,6 +27,12 @@ littlebird's official web site build with Bootstrap and Sketch 3.
 	6. [パーツの書き出し設定](#パーツの書き出し設定)
 	7. [パーツの書き出し](#パーツの書き出し)
 2. [Bootstrapの環境準備](#bootstrapの環境準備)
+	1. [BowerでBootstrapをダウンロード](#bowerでbootstrapをダウンロード)
+	2. [gruntとlessのインストール](#gruntとlessのインストール)
+	3. [gruntの動作確認](#gruntの動作確認)
+	4. [オリジナルCSSの追加](#オリジナルcssの追加)
+	5. [Variables 変数用ファイルの追加](#variables 変数用ファイルの追加)
+	6. [minifyの設定を追加](#minifyの設定を追加)
 3. [コーディング](#コーディング)
 
 ### デザインカンプの作成
@@ -71,16 +77,35 @@ Sketchで各オブジェクトやグループを選択して、「Make Exportabl
 
 パーツの書き出しは、オブジェクト単位、またはドキュメント一括で行うことができます。  
 レイヤー名を「img/ファイル名」のようにリネームすれば、そのままのパスとファイル名で書き出しができます。  
-今回はSketchの元ファイルを保存しているドキュメントルートから、直下の/img/フォルダへ一括で書き出しを行いました。
+今回はSketchの元ファイルを保存しているドキュメントルートから、直下の/img/フォルダへ一括で書き出しを行いました。  
+  
+以上で、デザインカンプの作成と、必要な画像パーツの作成が完了です。
 
 ### Bootstrapの環境準備
 
-1. bowerでBootstrapをダウンロード
-2. gruntとlessのインストール
-3. gruntの動作確認
-4. オリジナルCSSの追加
-5. Variables 変数用ファイルの追加
-6. minifyの設定を追加
+#### BowerでBootstrapをダウンロード
+
+Bootstrapのソースは公式サイトからダウンロードすることもできますが、Bowerというパッケージマネージャーを使うと、コマンドラインからいつでも最新版のソースを取得できます。  
+また、ライブラリの依存関係も記録してくれるなどのメリットもあるため、今回はBowerを使ってBootstrapをインストールすることにしました。  
+ターミナルから以下のコマンドを実行してBowerをインストール。
+```
+$ npm install bower -g
+```
+次に、プロジェクトのルートフォルダへ移動して、Bowerの初期化を行いました。
+```
+$ bower init
+```
+最後に、Bootstrapをインストールするために、以下のコマンドを実行します。
+```
+$ bower install bootstrap --save
+```
+以上で、/bower_components/以下にBootstrapのソースファイルがダウンロードされました。
+
+#### gruntとlessのインストール
+#### gruntの動作確認
+#### オリジナルCSSの追加
+#### Variables 変数用ファイルの追加
+#### minifyの設定を追加
 
 ### コーディング
 
