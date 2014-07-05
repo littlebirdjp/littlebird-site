@@ -16,7 +16,7 @@ littlebird's official web site build with Bootstrap and Sketch 3.
 - JQuery 1.9.0 or later
 - Sketch 3.0 or later
 
-## 制作手順
+## 制作過程
 
 1. [デザインカンプの作成](#デザインカンプの作成)
 	1. [アートボードの作成](#アートボードの作成)
@@ -28,8 +28,8 @@ littlebird's official web site build with Bootstrap and Sketch 3.
 	7. [パーツの書き出し](#パーツの書き出し)
 2. [Bootstrapの環境準備](#bootstrapの環境準備)
 	1. [BowerでBootstrapをダウンロード](#bowerでbootstrapをダウンロード)
-	2. [gruntとlessのインストール](#gruntとlessのインストール)
-	3. [gruntの動作確認](#gruntの動作確認)
+	2. [Gruntのインストール](#gruntのインストール)
+	3. [Gruntの動作確認](#gruntの動作確認)
 	4. [オリジナルCSSの追加](#オリジナルcssの追加)
 	5. [変数用ファイルの追加](#変数用ファイルの追加)
 	6. [minifyの設定を追加](#minifyの設定を追加)
@@ -89,20 +89,54 @@ Bootstrapのソースは公式サイトからダウンロードすることも�
 また、ライブラリの依存関係も記録してくれるなどのメリットもあるため、今回はBowerを使ってBootstrapをインストールすることにしました。  
 ターミナルから以下のコマンドを実行してBowerをインストール。
 ```
-$ npm install bower -g
+npm install bower -g
 ```
 次に、プロジェクトのルートフォルダへ移動して、Bowerの初期化を行いました。
 ```
-$ bower init
+bower init
 ```
 最後に、Bootstrapをインストールするために、以下のコマンドを実行します。
 ```
-$ bower install bootstrap --save
+bower install bootstrap --save
 ```
 以上で、/bower_components/以下にBootstrapのソースファイルがダウンロードされました。
 
-#### gruntとlessのインストール
-#### gruntの動作確認
+#### Gruntのインストール
+
+BootstrapはLESSで書かれているので、直接CSSを編集するのではなく、LESSファイルをコンパイルする必要があります。  
+LESSのコンパイルは、[CodeKit](https://incident57.com/codekit/)や[Prepros](http://alphapixels.com/prepros/)のようなGUIツールでもできますが、Bootstrap 3は元ファイルがGruntというCUIベースのビルドツールで構築されているので、今回はそのままGruntを使ってカスタマイズすることにしました。  
+Gruntをインストールするには、[Node.js](http://nodejs.org/)をインストールした上で、以下のコマンドを実行。
+```
+install -g grunt-cli (Windows)
+sudo npm install -g grunt-cli (Mac)
+```
+次に、/bower_components/bootstrap/まで移動して、以下のコマンドを実行します。
+```
+sudo npm install grunt
+```
+すると、Grunt本体と、このフォルダ内のpackages.jsonという設定ファイルに書かれたプラグインが、自動的にインストールされます。  
+/node_modules/というフォルダ以下にファイルができていれば、Gruntとプラグインのインストールは完了です。
+
+#### Gruntの動作確認
+
+Gruntのインストールができたので、次にGruntでLESSがコンパイルできるか、動作確認をしました。  
+GruntでLESSのコンパイルなどのタスクを実行するには、/bower_components/bootstrap/フォルダで、ターミナルから以下のコマンドを実行します。  
+```
+grunt watch
+```
+すると、ファイルの変更を監視して、自動的にLESS→CSSへの変換を実行してくれるようになります。  
+試しに、/less/フォルダ内のtheme.lessというファイルの一番下に、
+```
+.test {
+  float: left;
+}
+```
+と書いて保存してみました。  
+すると、ターミナルに色々とメッセージが表示された後、  
+/dist/css/フォルダ内のbootstrap-theme.cssを開くと、先ほど追加した記述がCSSファイルの方にも無事反映されていました。  
+  
+以上でGruntを使ったカスタマイズの準備が完了です。
+
 #### オリジナルCSSの追加
 #### 変数用ファイルの追加
 #### minifyの設定を追加
