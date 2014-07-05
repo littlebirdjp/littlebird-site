@@ -138,8 +138,102 @@ grunt watch
 以上でGruntを使ったカスタマイズの準備が完了です。
 
 #### オリジナルCSSの追加
+
+さて、BootstrapのCSSをカスタマイズする方法として、既存のCSS(LESS)ファイルをそのまま編集してもいいのですが、今後他のプロジェクトへ流用する際の拡張のしやすさなどを考えて、オリジナルのCSSファイルを追加することにしました。  
+つまり、Bootstrapの元ファイル（bootstrap.cssとbootstrap-theme.css）には手をつけず、littlebird-site.cssという新規ファイルを作成して、そこにスタイルを記述していく形になります。  
+そのためには、littlebird-site.lessというLESSファイルを編集したら、littlebird-site.cssにコンパイルさせる必要があります。  
+/bower_components/bootstrap/フォルダに入っているGruntの設定ファイル「Gruntfile.js」を開いて、LESSのコンパイル設定を探してみました。
+```
+    less: {
+      compileCore: {
+        options: {
+          strictMath: true,
+          sourceMap: true,
+          outputSourceFiles: true,
+          sourceMapURL: '<%= pkg.name %>.css.map',
+          sourceMapFilename: 'dist/css/<%= pkg.name %>.css.map'
+        },
+        files: {
+          'dist/css/<%= pkg.name %>.css': 'less/bootstrap.less'
+        }
+      },
+      compileTheme: {
+        options: {
+          strictMath: true,
+          sourceMap: true,
+          outputSourceFiles: true,
+          sourceMapURL: '<%= pkg.name %>-theme.css.map',
+          sourceMapFilename: 'dist/css/<%= pkg.name %>-theme.css.map'
+        },
+        files: {
+          'dist/css/<%= pkg.name %>-theme.css': 'less/theme.less'
+        }
+      },
+```
+この部分に、以下のように書き加えると、オリジナルのLESSファイルをCSSにコンパイルできるようになります。
+
+```
+      compileOriginal: {
+        options: {
+          strictMath: true,
+          sourceMap: true,
+          outputSourceFiles: true,
+          sourceMapURL: 'littlebird-site.css.map',
+          sourceMapFilename: 'dist/css/littlebird-site.css.map'
+        },
+        files: {
+          'dist/css/littlebird-site.css': 'less/littlebird-site.less'
+        }
+      },
+```
+
 #### 変数用ファイルの追加
+
+オリジナルのCSSファイルをGruntで生成できるようになりましたが、BootstrapのLESSファイルをよく見ると、リンクのカラーや、各コンポーネントのサイズなど、共通のスタイル設定をVariableという変数で一括設定しているファイルがあります。（variables.less）  
+これらの値は、オリジナルのlittlebird-site.lessで上書きしてしまってもいいのですが、せっかく便利な変数として管理している箇所は、変数のままカスタマイズした方がいいと思ったので、変数用のLESSファイルも、オリジナルで持っておくことにしました。  
+variables.lessをそのままコピーして、littlebird-variables.lessというファイル名で別名保存します。  
+そして、littlebird-site.lessの一番上の方に、以下の一行を追加すれば、準備が完了です。
+```
+@import "littlebird-variables.less";
+```
+これで、カスタマイズしたい箇所に変数が出てきたら、littlebird-variables.lessの方を編集すれば、そちらを読み込んでくれるようになりました。
+
 #### minifyの設定を追加
+
+さらにBootstrapのファイル構成を見てみると、/dist/css/フォルダに、*.cssの他に、*.min.cssというファイルがあることが分かります。  
+これらは、CSSファイルから改行などを取り除き、軽量化されたminifyバージョンのファイルです。  
+カスタマイズしている最中は、デバッグに役立つので、*.cssの方を読み込ませた方がいいのですが、最終的に公開する際は、表示の高速化が見込めるminify版のファイルにしたいですよね。  
+そこで、オリジナルのCSSもminify版を合わせて生成してくれるように、Gruntの設定を追加しました。  
+Gruntfile.jsでminifyの設定をしている箇所は以下になります。
+```
+      minify: {
+        options: {
+          cleancss: true,
+          report: 'min'
+        },
+        files: {
+          'dist/css/<%= pkg.name %>.min.css': 'dist/css/<%= pkg.name %>.css',
+          'dist/css/<%= pkg.name %>-theme.min.css': 'dist/css/<%= pkg.name %>-theme.css',
+        }
+      }
+    },
+```
+ここを、以下のように書き換えて、littlebird-site.cssからlittlebird-site.min.cssを自動生成するようにしました。
+```
+      minify: {
+        options: {
+          cleancss: true,
+          report: 'min'
+        },
+        files: {
+          'dist/css/<%= pkg.name %>.min.css': 'dist/css/<%= pkg.name %>.css',
+          'dist/css/<%= pkg.name %>-theme.min.css': 'dist/css/<%= pkg.name %>-theme.css',
+          'dist/css/littlebird-site.min.css': 'dist/css/littlebird-site.css'
+        }
+      }
+    },
+```
+以上で、littlebird-site.lessを編集すると、littlebird-site.cssとlittlebird-site.min.cssの両方が保存されるようになります。
 
 ### コーディング
 
