@@ -40,6 +40,7 @@ littlebird's official web site build with Bootstrap and Sketch 3.
 	4. [オリジナルClassの追加](#オリジナルclassの追加)
 	5. [各コンポーネントスタイルの編集](#各コンポーネントスタイルの編集)
 	6. [レスポンシブスタイルの追加](#レスポンシブスタイルの追加)
+4. [サイトの公開](#サイトの公開)
 
 ### デザインカンプの作成
 
@@ -358,4 +359,20 @@ Google Chromeの場合、調べたい場所を右クリックして「要素の�
 @screen-lg: 1200px;（デスクトップ大）
 ```
 上記のような変数に応じてMedia Queriesを指定することで、Bootstrapのグリッドレイアウトと連動させたデザイン変更が可能になります。
+
+### サイトの公開
+
+カスタマイズの作業が完了したので、サイトの公開準備をしました。  
+各CSSファイルの読み込みをminify版のファイルに差し替え、不要なファイルがサーバーに上がっている場合は、削除して作業が終了です。
+
+```
+<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+<link href="bower_components/bootstrap/dist/css/littlebird-site.min.css" rel="stylesheet">
+```
+今回のケースの場合、サーバーにアップするのは基本的に、HTMLファイルと/img/ディレクトリ、後は/bower_components/bootstrap/dist/css/以下のCSSファイル（minify版）のみでOKです。  
+LESSファイルやGruntのモジュール・設定ファイルなどは、編集時のみに必要となるものなので、基本ローカル上で管理しましょう。
+
+
+
 
