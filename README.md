@@ -34,6 +34,12 @@ littlebird's official web site build with Bootstrap and Sketch 3.
 	5. [変数用ファイルの追加](#変数用ファイルの追加)
 	6. [minifyの設定を追加](#minifyの設定を追加)
 3. [コーディング](#コーディング)
+	1. [HTMLの雛形を作成](#HTMLの雛形を作成)
+	2. [コンポーネントの配置](#コンポーネントの配置)
+	3. [グリッドレイアウトの調整](#グリッドレイアウトの調整)
+	4. [オリジナルClassの追加](#オリジナルclassの追加)
+	5. [各コンポーネントスタイルの編集](#各コンポーネントスタイルの編集)
+	6. [レスポンシブスタイルの追加](#レスポンシブスタイルの追加)
 
 ### デザインカンプの作成
 
@@ -170,7 +176,7 @@ grunt watch
         }
       },
 ```
-この部分に、以下のように書き加えると、オリジナルのLESSファイルをCSSにコンパイルできるようになります。
+この部分に、以下のような記述を書き加えると、オリジナルのLESSファイルをCSSにコンパイルできるようになります。
 
 ```
       compileOriginal: {
@@ -190,7 +196,7 @@ grunt watch
 #### 変数用ファイルの追加
 
 オリジナルのCSSファイルをGruntで生成できるようになりましたが、BootstrapのLESSファイルをよく見ると、リンクのカラーや、各コンポーネントのサイズなど、共通のスタイル設定をVariableという変数で一括設定しているファイルがあります。（variables.less）  
-これらの値は、オリジナルのlittlebird-site.lessで上書きしてしまってもいいのですが、せっかく便利な変数として管理している箇所は、変数のままカスタマイズした方がいいと思ったので、変数用のLESSファイルも、オリジナルで持っておくことにしました。  
+これらの値は、オリジナルのlittlebird-site.lessで上書きしてしまってもいいのですが、せっかく変数として管理している箇所は、変数のままカスタマイズした方がいい場合もあるので、変数用のLESSファイルも、オリジナルで持っておくことにしました。  
 variables.lessをそのままコピーして、littlebird-variables.lessというファイル名で別名保存します。  
 そして、littlebird-site.lessの一番上の方に、以下の一行を追加すれば、準備が完了です。
 ```
@@ -200,9 +206,9 @@ variables.lessをそのままコピーして、littlebird-variables.lessとい�
 
 #### minifyの設定を追加
 
-さらにBootstrapのファイル構成を見てみると、/dist/css/フォルダに、*.cssの他に、*.min.cssというファイルがあることが分かります。  
+さらにBootstrapのファイル構成を見てみると、/dist/css/フォルダに、`*.css`の他に、`*.min.css`というファイルがあることが分かります。  
 これらは、CSSファイルから改行などを取り除き、軽量化されたminifyバージョンのファイルです。  
-カスタマイズしている最中は、デバッグに役立つので、*.cssの方を読み込ませた方がいいのですが、最終的に公開する際は、表示の高速化が見込めるminify版のファイルにしたいですよね。  
+カスタマイズしている最中は、デバッグに役立つので、`*.css`の方を読み込ませた方がいいのですが、最終的に公開する際は、表示の高速化が見込めるminify版のファイルにしたいですよね。  
 そこで、オリジナルのCSSもminify版を合わせて生成してくれるように、Gruntの設定を追加しました。  
 Gruntfile.jsでminifyの設定をしている箇所は以下になります。
 ```
@@ -237,8 +243,119 @@ Gruntfile.jsでminifyの設定をしている箇所は以下になります。
 
 ### コーディング
 
-1. HTMLの雛形を作成
-2. コンポーネントの配置
-3. オリジナルスタイルの追加
-4. 各コンポーネントスタイルの編集
-5. レスポンシブスタイルの追加
+#### HTMLの雛形を作成
+
+ここで、ようやくHTMLの作成に着手しました。プロジェクトのルールフォルダにindex.htmlを作成し、jQueryとBootstrapのJavaScript、CSSの読み込みが必要なので、以下のようなタグを記述しました。
+
+```
+<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+<link href="bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet">
+<link href="bower_components/bootstrap/dist/css/littlebird-site.css" rel="stylesheet">
+...
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+```
+HTMLの雛形は何でもいいと思うのですが、[Bootstrapのサンプルファイル](https://github.com/twbs/bootstrap/tree/master/docs/examples)を参考にして、CSSはヘッダー部分、JavaScriptはフッター部分に記述しました。
+
+#### コンポーネントの配置
+
+次に、Bootstrapsの[「Components」](http://getbootstrap.com/components/)ページから、デザインに合いそうなパーツを選んで、サンプルのソースをコピーしました。
+
+- ヘッダーメニュー → [Navbar](http://getbootstrap.com/components/#navbar)
+- メインロゴ → [Jumbotron](http://getbootstrap.com/components/#jumbotron)
+- サービス紹介 → [Tumbnails](http://getbootstrap.com/components/#thumbnails)
+
+という感じで似たようなパーツを選んで、HTMLファイルにそのままペーストします。これで、テキストや画像をはめ込んでいくだけでも、大分体裁が整いました。  
+これだけだと、ページ全体の余白やレイアウトがうまく反映されない場合があるので、コンテンツ部分は、外側を`"container"`というclassで囲んでいます。  
+プロフィールとお問い合わせの部分は、特に参考になるパーツがなかったので、`"row"`
+と`"col"`だけでコーディングしました。
+
+#### グリッドレイアウトの調整
+
+各デバイス毎のレイアウトの調整は、Bootstrapのグリッドシステムを使えば簡単にできます。  
+例えば、Thumbnailsを使っている「サービス紹介」部分は、コピペした時点ではPCで見た時4カラムになっていますが、これを3カラムにするには`col-md-*`の部分の数字を以下のように書き換えます。
+```
+<div class="row">
+  <div class="col-xs-6 col-md-4">
+    ...
+  </div>
+  <div class="col-xs-6 col-md-4">
+    ...
+  </div>
+  <div class="col-xs-6 col-md-4">
+    ...
+  </div>
+</div>
+```
+Bootstrap 3では、グリッドの列数は12に固定されているので、4+4+4=12のように、合計で12になるように数を割り振ってやれば、その比率で分割されるのです。  
+さらにモバイルで表示した時は1カラムにしたかったので、`col-xs-*`の部分を以下のように書き換えました。
+```
+<div class="row">
+  <div class="col-xs-12 col-md-4">
+    ...
+  </div>
+  <div class="col-xs-12 col-md-4">
+    ...
+  </div>
+  <div class="col-xs-12 col-md-4">
+    ...
+  </div>
+</div>
+```
+以上の要領で、各デバイス毎のレイアウトを調整していきます。
+
+#### オリジナルClassの追加
+
+次に、配置した各コンポーネントに、オリジナルのclass名を付けることにしました。  
+例えば、Jumbotronのコンポーネントには、`"jumbotron"`というclassが振られてしますが、このサイトではメイン部分に当たるので、`"main"`というclassを追加し、その中に入っているロゴ画像には`"main__logo"`、サイトタイトルには`"main__title"`というclassを追加しました。  
+これらオリジナルのclassに対してスタイルを記述していくことで、CSSカスタマイズを行うことにしました。  
+また、今回オリジナルCSSの命名ルールには、[BEM](http://bem.info/)の考え方を取り入れています。
+
+#### 各コンポーネントスタイルの編集
+
+HTML側の準備が整ったので、いよいよCSSの編集に移ります。まず、現状のサイトをブラウザで開いて、各要素に適用されているスタイルを確認します。  
+Google Chromeの場合、調べたい場所を右クリックして「要素の検証」を実行すると、その部分に適用されているスタイルと、どのCSSファイルの何行目に記述されているかを調べることができます。  
+さらにBootstrapの場合、一緒に吐き出しているソースマップファイル（*.css.map）のおかげで、どのLESSファイルの何行目に書かれているかを知ることもできます。  
+編集したい要素に適用されているスタイルが分かったら、それを上書きするためのスタイルをlittlebird-site.lessに記述していきました。  
+例えば、Jumbotronには、jumbotron.lessに以下のように記述されていて、背景色がグレーに指定されていますが、
+```
+.jumbotron {
+  background-color: @jumbotron-bg;
+}
+```
+ここは背景色をなくして白くしたかったので、littlebird-site.lessに以下のように記述して、この背景のスタイルを打ち消しました。
+```
+.main {
+  background: none;
+}
+```
+この要領で、各コンポーネントのスタイルを、デザインカンプの見た目通りになるよう調整していきます。
+
+#### レスポンシブスタイルの追加
+
+最後に、スタイルのコンポーネントスタイルの上書きだけでは対応できない細かい微調整を行いました。  
+例えば、モバイル版とデスクトップバージョンでは、ロゴやタイトルの文字サイズを変えて、もっと大きく表示する必要があります。  
+このような処理は、Bootstrapのグリッドシステムとは別に、Media Queriesを使ってデバイスのサイズ毎にスタイルを指定する必要があります。  
+例えば、タブレット以上のサイズで見た時に、メインタイトルのフォントサイズを大きくしたかったので、以下のようなMedia Queriesを追記しました。
+```
+.main {
+  &__title {
+    h1 {
+      font-size: 36px;
+      @media (min-width: @screen-sm) {
+        font-size: 80px;
+      }
+    }
+  }
+}
+```
+`min-width:`の部分で指定する画面幅（ブレークポイント）は、自由に設定してもいいのですが、今回はBootstrapで変数として管理している値を使用しました。
+
+```
+@screen-xs: 480px;（モバイル）
+@screen-sm: 768px;（タブレット）
+@screen-md: 992px;（デスクトップ）
+@screen-lg: 1200px;（デスクトップ大）
+```
+上記のような変数に応じてMedia Queriesを指定することで、Bootstrapのグリッドレイアウトと連動させたデザイン変更が可能になります。
+
