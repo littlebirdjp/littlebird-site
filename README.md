@@ -370,8 +370,7 @@ Google Chromeの場合、調べたい場所を右クリックして「要素の�
 <link href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
 <link href="bower_components/bootstrap/dist/css/littlebird-site.min.css" rel="stylesheet">
 ```
-今回のケースの場合、サーバーにアップするのは基本的に、HTMLファイルと/img/ディレクトリ、後は/bower_components/bootstrap/dist/css/以下のCSSファイル（minify版）のみでOKです。  
-LESSファイルやGruntのモジュール・設定ファイルなどは、編集時のみに必要となるものなので、基本ローカル上で管理しましょう。
+今回のケースの場合、サーバーにアップするのは基本的に、HTMLファイルと/img/ディレクトリ、後は/bower_components/bootstrap/dist/css/以下のCSSファイル（minify版）のみでOKです。
 
 
 
