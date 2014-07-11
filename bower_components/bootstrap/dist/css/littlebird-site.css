@@ -253,4 +253,13 @@ a {
   padding: 15px 0;
   margin: 0;
 }
+.footer a:link,
+.footer a:visited {
+  color: #ccc;
+}
+.footer a:hover,
+.footer a:active,
+.footer a:focus {
+  color: #999;
+}
 /*# sourceMappingURL=littlebird-site.css.map */
