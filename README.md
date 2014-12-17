@@ -119,7 +119,7 @@ sudo npm install -g grunt-cli (Mac)
 ```
 次に、/bower_components/bootstrap/まで移動して、以下のコマンドを実行します。
 ```
-sudo npm install grunt
+sudo npm install
 ```
 すると、Grunt本体と、このフォルダ内のpackages.jsonという設定ファイルに書かれたプラグインが、自動的にインストールされます。  
 /node_modules/というフォルダ以下にファイルができていれば、Gruntとプラグインのインストールは完了です。
